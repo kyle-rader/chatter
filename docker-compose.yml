@@ -1,0 +1,22 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      PG_USER: "postgres"
+      PG_PASSWORD: "postgres"
+    ports:
+      - "5432:5432"
+
+
+  api:
+    build:
+      context: ./chatter-api
+      dockerfile: Dockerfile-dev
+      args:
+        APP_NAME: "chatter-api"
+    environment:
+      FOO: "bar"
+    volumes:
+      - ./chatter-api:/chatter-api
+    command: "/bin/bash"
