@@ -1,3 +1,6 @@
 [submodule "chatter-ui"]
 	path = chatter-ui
 	url = ./chatter-ui
+[submodule "chatter_api"]
+	path = chatter_api
+	url = ./chatter_api
